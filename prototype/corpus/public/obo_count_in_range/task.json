@@ -1,0 +1,18 @@
+{
+  "id": "obo_count_in_range",
+  "distribution": "off_by_one",
+  "prompt": "count_in_range() should treat both bounds as inclusive, but count_in_range([10], 10, 10) returns 0.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ]
+}

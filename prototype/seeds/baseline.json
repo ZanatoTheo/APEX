@@ -1,0 +1,29 @@
+{
+  "graph": {
+    "graph_version": "1",
+    "start": "plan",
+    "max_steps": 12,
+    "nodes": [
+      {"id": "plan", "kind": "llm", "transitions": [
+        {"on": "read_file", "to": "read"},
+        {"on": "write_patch", "to": "patch"},
+        {"on": "give_up", "to": "done"},
+        {"on": "error", "to": "plan"}
+      ]},
+      {"id": "read", "kind": "tool", "tool": "read_file", "transitions": [
+        {"on": "ok", "to": "plan"},
+        {"on": "error", "to": "plan"}
+      ]},
+      {"id": "patch", "kind": "tool", "tool": "write_patch", "transitions": [
+        {"on": "applied", "to": "done"},
+        {"on": "rejected", "to": "plan"}
+      ]},
+      {"id": "done", "kind": "terminal", "transitions": []}
+    ]
+  },
+  "axioms": [
+    "Read the source file named in the task before changing anything.",
+    "Make the smallest change that fixes the reported problem.",
+    "Never edit tests; fix the code under test."
+  ]
+}

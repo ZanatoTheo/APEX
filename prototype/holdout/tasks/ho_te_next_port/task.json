@@ -1,0 +1,18 @@
+{
+  "id": "ho_te_next_port",
+  "distribution": "type_error",
+  "prompt": "next_free_port('80,443') raises TypeError: can only concatenate str (not \"int\") to str.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ]
+}

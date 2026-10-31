@@ -1,0 +1,14 @@
+{
+  "ho_obo_chunk": "off_by_one",
+  "ho_obo_nth_from_end": "off_by_one",
+  "ho_te_label": "type_error",
+  "ho_te_next_port": "type_error",
+  "obo_count_in_range": "off_by_one",
+  "obo_last_n": "off_by_one",
+  "obo_page_count": "off_by_one",
+  "obo_window_sum": "off_by_one",
+  "te_greeting": "type_error",
+  "te_join_ids": "type_error",
+  "te_mean_csv": "type_error",
+  "te_total_price": "type_error"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "te_total_price",
+  "distribution": "type_error",
+  "prompt": "total_price([('a', '3'), ('b', '4')]) raises TypeError: unsupported operand type(s) for +: 'int' and 'str'.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ]
+}

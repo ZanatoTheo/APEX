@@ -1,0 +1,18 @@
+{
+  "id": "te_greeting",
+  "distribution": "type_error",
+  "prompt": "greeting('Ana', 30) raises TypeError: can only concatenate str (not \"int\") to str.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ]
+}

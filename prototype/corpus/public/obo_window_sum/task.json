@@ -1,0 +1,18 @@
+{
+  "id": "obo_window_sum",
+  "distribution": "off_by_one",
+  "prompt": "window_sum() drops the last window: window_sum([1, 2, 3, 4], 2) returns [3, 5] instead of [3, 5, 7].",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "models": {
+    "provider": "llm",
+    "retries": 3,
+    "retry_backoff_s": 2,
+    "subagent": {"model_id": "<set: the model ID your llm_service pins for the subagent role>", "max_tokens": 2000},
+    "mutation": {"model_id": "<set: the model ID your llm_service pins for the mutation role>", "max_tokens": 2000}
+  },
+  "limits": {"token_budget": 30000, "timeout_s": 300},
+  "budget": {"tokens_total": 3000000, "holdout_reserve": 300000, "max_concurrent": 2}
+}
