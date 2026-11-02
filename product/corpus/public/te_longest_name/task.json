@@ -1,0 +1,19 @@
+{
+  "id": "te_longest_name",
+  "distribution": "type_error",
+  "prompt": "longest_name() raises TypeError: object of type 'NoneType' has no len().",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

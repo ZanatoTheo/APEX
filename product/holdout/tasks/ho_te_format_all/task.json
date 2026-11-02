@@ -1,0 +1,19 @@
+{
+  "id": "ho_te_format_all",
+  "distribution": "type_error",
+  "prompt": "format_all() crashes whenever it is given values.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "symptom"
+}

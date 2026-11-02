@@ -1,0 +1,19 @@
+{
+  "id": "te_over_limit",
+  "distribution": "type_error",
+  "prompt": "over_limit() crashes when the limit comes from the config file.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "symptom"
+}

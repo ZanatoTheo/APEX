@@ -1,0 +1,19 @@
+{
+  "id": "obo_up_to",
+  "distribution": "off_by_one",
+  "prompt": "up_to([1, 2, 3, 4], 2) returns [1, 2] instead of [1, 2, 3].",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

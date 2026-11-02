@@ -1,0 +1,10 @@
+--- a/src/trend.py
++++ b/src/trend.py
+@@ -1,6 +1,6 @@
+ def _pairs(xs):
+     """Return every pair of neighbouring items (xs[i], xs[i + 1])."""
+-    return [(xs[i], xs[i + 1]) for i in range(len(xs) - 2)]
++    return [(xs[i], xs[i + 1]) for i in range(len(xs) - 1)]
+ 
+ 
+ def count_increases(xs):

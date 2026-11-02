@@ -1,0 +1,19 @@
+{
+  "id": "obo_in_bounds",
+  "distribution": "off_by_one",
+  "prompt": "Code that checks in_bounds(i, xs) before reading xs[i] still crashes with IndexError sometimes.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "symptom"
+}

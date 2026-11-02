@@ -1,0 +1,19 @@
+{
+  "id": "te_count_above_mean",
+  "distribution": "type_error",
+  "prompt": "count_above_mean('1,2,3') raises TypeError: object of type 'map' has no len().",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

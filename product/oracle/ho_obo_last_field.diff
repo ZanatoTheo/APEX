@@ -1,0 +1,10 @@
+--- a/src/fields.py
++++ b/src/fields.py
+@@ -1,6 +1,6 @@
+ def _last_index(xs):
+     """Index of the last item of a non-empty list."""
+-    return len(xs)
++    return len(xs) - 1
+ 
+ 
+ def last_field(line):

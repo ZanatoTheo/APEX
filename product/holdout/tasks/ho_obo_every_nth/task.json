@@ -1,0 +1,19 @@
+{
+  "id": "ho_obo_every_nth",
+  "distribution": "off_by_one",
+  "prompt": "every_nth([1, 2, 3, 4, 5, 6], 2) returns [3, 5] instead of [2, 4, 6].",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

@@ -1,0 +1,10 @@
+--- a/src/meanline.py
++++ b/src/meanline.py
+@@ -1,6 +1,6 @@
+ def _ints(line):
+     """Return the integers of a comma-separated line, as a list."""
+-    return map(int, line.split(","))
++    return list(map(int, line.split(",")))
+ 
+ 
+ def count_above_mean(line):

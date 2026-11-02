@@ -1,0 +1,7 @@
+--- a/src/countdown.py
++++ b/src/countdown.py
+@@ -1,3 +1,3 @@
+ def countdown(n):
+     """Return [n, n - 1, ..., 1]."""
+-    return list(range(n, 1, -1))
++    return list(range(n, 0, -1))

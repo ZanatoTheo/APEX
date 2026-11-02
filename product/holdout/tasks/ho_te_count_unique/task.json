@@ -1,0 +1,19 @@
+{
+  "id": "ho_te_count_unique",
+  "distribution": "type_error",
+  "prompt": "count_unique([[1, 2], [1, 2], [3]]) raises TypeError: unhashable type: 'list'; it should return 2.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

@@ -1,0 +1,8 @@
+--- a/src/tail.py
++++ b/src/tail.py
+@@ -2,4 +2,4 @@
+     """Return the last n items of xs (all of xs if n >= len(xs))."""
+     if n <= 0:
+         return []
+-    return xs[max(len(xs) - n + 1, 0):]
++    return xs[max(len(xs) - n, 0):]

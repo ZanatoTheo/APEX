@@ -1,0 +1,19 @@
+{
+  "id": "te_latest_version",
+  "distribution": "type_error",
+  "prompt": "latest(['1.9', '1.10']) returns '1.9'.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

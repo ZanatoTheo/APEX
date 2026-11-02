@@ -1,0 +1,19 @@
+{
+  "id": "te_merge_tags",
+  "distribution": "type_error",
+  "prompt": "merge_tags() crashes for some callers.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "symptom"
+}

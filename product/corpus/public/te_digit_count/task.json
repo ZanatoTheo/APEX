@@ -1,0 +1,19 @@
+{
+  "id": "te_digit_count",
+  "distribution": "type_error",
+  "prompt": "digit_count(123) raises TypeError: object of type 'int' has no len(); it should return 3.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

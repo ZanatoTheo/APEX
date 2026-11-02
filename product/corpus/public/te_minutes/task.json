@@ -1,0 +1,19 @@
+{
+  "id": "te_minutes",
+  "distribution": "type_error",
+  "prompt": "minutes('125') raises TypeError: unsupported operand type(s) for //: 'str' and 'int'; it should return 2.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

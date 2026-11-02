@@ -1,0 +1,10 @@
+--- a/src/versions.py
++++ b/src/versions.py
+@@ -1,6 +1,6 @@
+ def _key(version):
+     """Return the parts of a dotted version as integers, for comparing."""
+-    return version.split(".")
++    return [int(p) for p in version.split(".")]
+ 
+ 
+ def latest(versions):

@@ -1,0 +1,10 @@
+--- a/src/cleaning.py
++++ b/src/cleaning.py
+@@ -1,6 +1,6 @@
+ def _clean(name):
+     """Return name without surrounding spaces."""
+-    name.strip()
++    return name.strip()
+ 
+ 
+ def longest_name(names):

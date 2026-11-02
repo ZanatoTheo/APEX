@@ -1,0 +1,19 @@
+{
+  "id": "obo_first_half",
+  "distribution": "off_by_one",
+  "prompt": "first_half() loses an item on lists of odd length.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "symptom"
+}

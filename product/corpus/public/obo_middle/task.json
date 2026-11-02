@@ -1,0 +1,19 @@
+{
+  "id": "obo_middle",
+  "distribution": "off_by_one",
+  "prompt": "middle() does not return the middle item of the list.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "symptom"
+}

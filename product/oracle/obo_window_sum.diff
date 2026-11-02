@@ -1,0 +1,7 @@
+--- a/src/window.py
++++ b/src/window.py
+@@ -1,3 +1,3 @@
+ def window_sum(xs, k):
+     """Return the sum of every contiguous window of length k."""
+-    return [sum(xs[i:i + k]) for i in range(len(xs) - k)]
++    return [sum(xs[i:i + k]) for i in range(len(xs) - k + 1)]

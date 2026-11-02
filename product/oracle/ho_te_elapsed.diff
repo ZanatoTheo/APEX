@@ -1,0 +1,10 @@
+--- a/src/elapsed.py
++++ b/src/elapsed.py
+@@ -1,6 +1,6 @@
+ def _to_int(s):
+     """Parse a numeric string that may have spaces around it."""
+-    return s.strip()
++    return int(s.strip())
+ 
+ 
+ def elapsed(start, end):

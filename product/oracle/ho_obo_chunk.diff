@@ -1,0 +1,7 @@
+--- a/src/chunks.py
++++ b/src/chunks.py
+@@ -1,3 +1,3 @@
+ def chunk(xs, n):
+     """Split xs into consecutive pieces of length n (the last piece may be shorter)."""
+-    return [xs[i:i + n] for i in range(0, len(xs) - 1, n)]
++    return [xs[i:i + n] for i in range(0, len(xs), n)]

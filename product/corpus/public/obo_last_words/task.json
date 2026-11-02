@@ -1,0 +1,19 @@
+{
+  "id": "obo_last_words",
+  "distribution": "off_by_one",
+  "prompt": "last_words('a b c d', 2) returns 'd' instead of 'c d'.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

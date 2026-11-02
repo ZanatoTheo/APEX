@@ -1,0 +1,19 @@
+{
+  "id": "obo_pad_left",
+  "distribution": "off_by_one",
+  "prompt": "pad_left('7', 3, '0') returns '07' instead of '007'.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "te_url",
+  "distribution": "type_error",
+  "prompt": "url() crashes when a parameter value is a number.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

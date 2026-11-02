@@ -1,0 +1,19 @@
+{
+  "id": "obo_page_count",
+  "distribution": "off_by_one",
+  "prompt": "page_count() loses the final partial page: page_count(11, 5) returns 2 instead of 3.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

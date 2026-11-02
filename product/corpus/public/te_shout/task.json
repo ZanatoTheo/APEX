@@ -1,0 +1,19 @@
+{
+  "id": "te_shout",
+  "distribution": "type_error",
+  "prompt": "shout('hi', '3') raises TypeError: can't multiply sequence by non-int of type 'str'; it should return 'HI HI HI'.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

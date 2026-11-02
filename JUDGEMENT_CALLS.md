@@ -261,7 +261,7 @@ Phases 3–5 ran without a human in the loop. The calls below were made inside C
 ## Prototype judgement calls (2026-10-31, /bulldog prototype run)
 
 ### JC-33 · Prototype · Sandbox without Docker · related: design §14, CODE_STRUCTURE §5.6
-- **Context:** Docker is not installed and the freeze forbids installing anything outside APEX.
+- **Context:** Docker is not installed and the freeze forbids installing anything outside APEX. *(2026-11-02: Docker is now installed on this host; see JC-41.)*
 - **Options:**
   1. **Subprocess in a temp-dir copy with timeout, `resource` rlimits, scrubbed env, `unshare -rn` when it works unprivileged.** *(taken)* This is not a security boundary. It is acceptable because the fake model only emits reference patches or no-op patches.
   2. Install rootless Docker and follow §14. Real isolation, but it needs system setup by the user.
@@ -299,4 +299,48 @@ Phases 3–5 ran without a human in the loop. The calls below were made inside C
 - **Options:**
   1. **The prototype follows each open JC's taken option, except JC-15/JC-16 (overridden by JC-36). For JC-02, which has no taken option yet, it follows option 1, the one CODE_STRUCTURE.md is written for: host-side interpreter, model calls from the host.** *(taken)*
   2. Wait for the morning review before coding.
+- **Status:** OPEN
+
+### JC-39 · v1.0 · Real-model adapter · related: CODE_STRUCTURE §2, JC-35
+- **Context:** CODE_STRUCTURE §2 plans an `httpx`-based `openai_compat` client. pip is blocked on this host (PEP 668), and Meta serves its models through an OpenAI-style **Responses API**.
+- **Options:**
+  1. **`product/apex/llm_service.py` with stdlib `urllib`: POST `{base_url}/responses` with `model`, `instructions`, `input`, `max_output_tokens`, `store: false`; text from `output[].content[].output_text`, usage from `input_tokens` / `output_tokens`. HTTP 3xx, 400, 401, 403, 404 and 422 are not retried; redirects are refused so the key is never re-sent; the key is scrubbed from every error text.** *(taken)* Nothing to install.
+  2. The `openai` SDK or `httpx` in a venv. Matches CODE_STRUCTURE, but adds a dependency and a bootstrap step.
+- **Status:** OPEN
+
+### JC-40 · v1.0 · Models and endpoint · related: design §6, JC-39
+- **Options:**
+  1. **Muse Spark (`muse-spark-1.3`) for the subagent role and a Muse Code model for mutation, both at `https://api.meta.ai/v1` (`configs/meta.json`). The key comes only from `MODEL_API_KEY`. The Muse Code ID is still a placeholder until `run.py models` lists it.** *(taken)*
+  2. One model for both roles. Simpler, but loses the code-specialised model for mutation.
+- **Status:** OPEN
+
+### JC-41 · v1.0 · Real model on the subprocess sandbox · related: JC-33, design §14
+- **Context:** JC-33's risk is now real: a real model writes the patches that run. On this host `unshare -rn` (no network) and `prlimit` both work (`run.py corpus-check` prints them).
+- **Options:**
+  1. **Keep the JC-33 subprocess sandbox for v1.0. Tasks come only from our own corpus, and the agent can edit only `src/*.py`.** *(taken)* No new moving parts during the hackathon.
+  2. Docker containers with `--network=none` (Docker is now installed). Closes most of JC-33, but is a new subsystem to build and test.
+- **Status:** OPEN
+
+### JC-42 · v1.0 · Loading `.env` · related: JC-39
+- **Options:**
+  1. **`run.py` and `tools/live_checks.py` load `product/.env` (gitignored) only when run as commands, and never override a variable already set. Tests never load it, so the offline suite can't reach the network even with a real key on disk.** *(taken)*
+  2. Require `export MODEL_API_KEY=…` in the shell. Simpler, but easy to forget, and keys end up in shell history.
+- **Status:** OPEN
+
+### JC-43 · v1.0 · Corpus size, tiers and labels · related: JC-37, design §9.1
+- **Options:**
+  1. **30 public + 10 held-out tasks (15 + 5 per family), each tagged `plain` / `symptom` / `indirect` by hand before any probe data. `te_latest_version` is labelled type_error although it raises no TypeError (a type mix-up gives a wrong value), so the fake model treats its trace as off-by-one. Known overlaps (`ho_te_label` ~ `te_greeting`, `ho_te_next_port` ~ `te_latest_version`) are logged in `LOGIC.md`.** *(taken)* The live probe retunes tiers and prompts (`1_11_test_plan.md` step 3).
+  2. Wait for probe data before writing tasks. Blocks v1.0 on the live key.
+- **Status:** OPEN
+
+### JC-44 · v1.0 · Probe and cost bound · related: design §9.1, design §10
+- **Options:**
+  1. **`run.py probe` runs the baseline once on every public task and never runs held-out tasks, so a repeatable probe can't leak held-out feedback. `run.py estimate` gives a worst-case token bound (history re-sent each call, mutation retries replayed); `configs/meta.json` is sized to it (tokens_total 9.4M, reserve 1.35M) as a ceiling, to be lowered after the probe.** *(taken)*
+  2. Size the budget from a guess of real use. Cheaper ceiling, but a generation that runs over it partway through is discarded.
+- **Status:** OPEN
+
+### JC-45 · v1.0 · Smoke-only build, tests after · related: JC-38
+- **Options:**
+  1. **Build v1.0 with smoke checks only (suite stays green, corpus-check, each command runs once); every deeper test, all live checks and the whole-code review run afterwards from `1_11_test_plan.md`.** *(taken)* The user's choice for the hackathon day (2026-11-01), a one-off.
+  2. Test-first for every new behaviour, as the working rules say by default.
 - **Status:** OPEN

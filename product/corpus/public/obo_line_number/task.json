@@ -1,0 +1,19 @@
+{
+  "id": "obo_line_number",
+  "distribution": "off_by_one",
+  "prompt": "line_number(text, pos) is wrong when pos points at a newline character.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

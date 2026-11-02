@@ -1,0 +1,19 @@
+{
+  "id": "ho_te_elapsed",
+  "distribution": "type_error",
+  "prompt": "elapsed(' 10', '25 ') raises TypeError: unsupported operand type(s) for -: 'str' and 'str'.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

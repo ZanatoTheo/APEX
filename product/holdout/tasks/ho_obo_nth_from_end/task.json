@@ -1,0 +1,19 @@
+{
+  "id": "ho_obo_nth_from_end",
+  "distribution": "off_by_one",
+  "prompt": "nth_from_end([1, 2, 3], 1) should return the last item (3) but returns 2.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

@@ -1,0 +1,10 @@
+--- a/src/urls.py
++++ b/src/urls.py
+@@ -1,6 +1,6 @@
+ def _query(params):
+     """Return 'k=v' pairs sorted by key and joined by '&'."""
+-    return "&".join(k + "=" + v for k, v in sorted(params.items()))
++    return "&".join(f"{k}={v}" for k, v in sorted(params.items()))
+ 
+ 
+ def url(path, params):

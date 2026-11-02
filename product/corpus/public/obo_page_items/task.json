@@ -1,0 +1,19 @@
+{
+  "id": "obo_page_items",
+  "distribution": "off_by_one",
+  "prompt": "page(items, 1, 10) skips the first ten items.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

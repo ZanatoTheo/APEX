@@ -1,0 +1,10 @@
+--- a/src/words.py
++++ b/src/words.py
+@@ -1,6 +1,6 @@
+ def _tail(xs, k):
+     """Return the last k items of xs (all of xs when k >= len(xs))."""
+-    start = max(len(xs) - k + 1, 0)
++    start = max(len(xs) - k, 0)
+     return xs[start:]
+ 
+ 

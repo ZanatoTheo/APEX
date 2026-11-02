@@ -1,0 +1,19 @@
+{
+  "id": "ho_obo_bar",
+  "distribution": "off_by_one",
+  "prompt": "Text bars drawn by bar() do not have the requested width.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "symptom"
+}

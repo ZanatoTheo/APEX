@@ -1,0 +1,19 @@
+{
+  "id": "te_add_minutes",
+  "distribution": "type_error",
+  "prompt": "add_minutes() crashes for every input.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "symptom"
+}

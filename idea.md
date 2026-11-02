@@ -87,20 +87,25 @@ held-out success rate reaches p_min on every named task distribution.
   - **Phase 2:** Meta Muse Spark with escalation on MAD-entropy spikes, Rubric Window governance, and the Code Unit.
   - **Phase 3:** SAM 3.1 visual parsing and the Signal Watcher.
 
-## Prototype status (`prototype/`)
+## Status
 
-The prototype runs the full MVP loop with the Python standard library and `git`, and 91 tests pass. It deviates from
-the design in a few places, each logged in `JUDGEMENT_CALLS.md`:
+**v1.0 (`product/`, 2026-11-02):** built, live checks pending. It is a copy of the prototype with:
+- a real-model adapter, `apex/llm_service.py`: Meta's Responses API, Muse Spark for the subagent role, Muse Code for
+  mutation, key in `MODEL_API_KEY` (JC-39, JC-40);
+- a 30 public + 10 held-out task corpus with difficulty tiers (JC-43);
+- commands to inspect a corpus or run: `probe` and `estimate` (JC-44), and `stats`.
+
+The live checks, corpus tuning and the first real run follow `1_11_test_plan.md`. The logic behind each change is in
+`LOGIC.md`.
+
+**Prototype (`prototype/`, frozen):** runs the full MVP loop with the Python standard library and `git`, driven by a
+deterministic fake model (JC-34). It deviates from the design in a few places, each logged in `JUDGEMENT_CALLS.md`:
 - **JC-33:** subprocess with rlimits in place of the Docker Sandbox Pool.
 - **JC-35:** canonical JSON without floats, so scores are stored as integer ppm.
 - **JC-37:** smaller defaults: P = 4, μ = 2, K = 3, G_max = 8, with 8 public and 4 held-out tasks.
 
-A deterministic fake model drives both model roles. It fixes a task reliably only when the subagent's Prompt Axioms
-address that task's distribution (JC-34), so the demo exercises the machinery rather than measuring real agents. The seed-1234 run
-takes the best Public Score from 60% to 99%. The best Survivor gains two Prompt Axioms and a verify loop in its Graph
-Config, scores 8/8 on the Held-out Tasks, and the ledger verifies OK.
-
-The only missing piece is `apex/llm_service.py`, the real-model adapter. Its contract is fixed in `prototype/README.md`.
+Its seed-1234 run takes the best Public Score from 60% to 99%. The best Survivor gains two Prompt Axioms and a verify
+loop in its Graph Config, and the ledger verifies OK.
 
 ## Open points (§18)
 
@@ -110,4 +115,4 @@ The only missing piece is `apex/llm_service.py`, the real-model adapter. Its con
 - Calibration of the Behavioral Signature weights, the MAD-entropy threshold and the Rubric Window length.
 - Model availability for Meta Muse Spark and Meta Muse Code.
 
-Candidate hackathon extensions are listed in `ideas_unhinges.md`. None has been chosen yet.
+Candidate hackathon extensions are listed in `ideas_unhinged.md`. None has been chosen yet.

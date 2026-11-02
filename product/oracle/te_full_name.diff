@@ -1,0 +1,7 @@
+--- a/src/names.py
++++ b/src/names.py
+@@ -1,3 +1,3 @@
+ def full_name(first, middle, last):
+     """Join the name parts with single spaces; middle may be None or '' and is skipped then."""
+-    return " ".join([first, middle, last])
++    return " ".join(p for p in (first, middle, last) if p)

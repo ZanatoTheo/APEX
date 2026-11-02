@@ -1,0 +1,19 @@
+{
+  "id": "obo_last_n",
+  "distribution": "off_by_one",
+  "prompt": "last_n() returns one item too few: last_n([1, 2, 3, 4], 2) returns [4] instead of [3, 4].",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "plain"
+}

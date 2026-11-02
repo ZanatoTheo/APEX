@@ -1,0 +1,7 @@
+--- a/src/upto.py
++++ b/src/upto.py
+@@ -1,3 +1,3 @@
+ def up_to(xs, i):
+     """Return the items of xs up to and including index i."""
+-    return xs[:i]
++    return xs[:i + 1]

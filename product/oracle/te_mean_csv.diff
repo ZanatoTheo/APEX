@@ -1,0 +1,8 @@
+--- a/src/stats.py
++++ b/src/stats.py
+@@ -1,4 +1,4 @@
+ def mean_of_csv(line):
+     """Return the floor of the mean of a comma-separated line of integers, e.g. '1,2,3' -> 2."""
+-    parts = line.split(",")
++    parts = [int(p) for p in line.split(",")]
+     return sum(parts) // len(parts)

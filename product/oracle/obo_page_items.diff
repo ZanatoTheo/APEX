@@ -1,0 +1,10 @@
+--- a/src/pager.py
++++ b/src/pager.py
+@@ -1,6 +1,6 @@
+ def _offset(n, size):
+     """Index of the first item on page n (pages are 1-based)."""
+-    return n * size
++    return (n - 1) * size
+ 
+ 
+ def page(items, n, size):

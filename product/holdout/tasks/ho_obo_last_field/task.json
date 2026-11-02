@@ -1,0 +1,19 @@
+{
+  "id": "ho_obo_last_field",
+  "distribution": "off_by_one",
+  "prompt": "last_field('a, b, c') raises IndexError.",
+  "editable_paths": [
+    "src/*.py"
+  ],
+  "test_command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test*.py"
+  ],
+  "difficulty": "indirect"
+}

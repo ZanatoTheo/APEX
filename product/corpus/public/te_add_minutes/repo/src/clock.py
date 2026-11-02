@@ -1,0 +1,5 @@
+def add_minutes(clock, minutes):
+    """Add minutes to clock ('HH:MM') and return the new 'HH:MM', wrapping at 24 hours."""
+    h, m = clock.split(":")
+    total = (h * 60 + m + minutes) % 1440
+    return f"{total // 60:02d}:{total % 60:02d}"
