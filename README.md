@@ -1,6 +1,6 @@
-# Apex 2
+# Apex
 
-Apex 2 evolves a group of LLM agents on a task, one step at a time. Every role (agents, subagents, Eval, Mutation,
+Apex evolves a group of LLM agents on a task, one step at a time. Every role (agents, subagents, Eval, Mutation,
 the Summarizer, the cleaner and Op. Orch, the operator that picks, breeds and replaces agents) runs on
 `muse-spark-1.3-contributor`. Calls go through the OpenAI SDK to `https://api.meta.ai/v1`.
 
