@@ -1,0 +1,8 @@
+.venv/
+runs/*
+!runs/run5-20261104-2005.log
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+environment/data/

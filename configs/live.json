@@ -1,0 +1,5 @@
+{
+  "task": {"connector": "apex.env_connector"},
+  "models": {"retries": 6, "retry_backoff_s": 5, "request_timeout_s": 600},
+  "operation": {"max_cycles": 4}
+}

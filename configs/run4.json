@@ -1,0 +1,14 @@
+{
+  "task": {"connector": "apex.env_connector"},
+  "models": {"retries": 6, "retry_backoff_s": 5, "request_timeout_s": 600},
+  "limits": {"call_tokens": 100000, "max_output_tokens": 16000, "subagent_tokens": 16000},
+  "operation": {
+    "agents": 4,
+    "max_cycles": 3,
+    "max_minutes": 150,
+    "advice_below": 0.0,
+    "summary_output_tokens": 1000,
+    "eval_output_tokens": 5000
+  },
+  "cleaner": {"output_tokens": 2500}
+}

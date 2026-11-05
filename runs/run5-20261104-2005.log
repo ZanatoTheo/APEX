@@ -1,0 +1,7 @@
+worst case: 6 cycles, at most $20.41 (each cycle capped at $50.00)
+run dir: runs/20261104-200512-07b8
+loop 1 cycle 1 (steps 0-3): best g0-06 0.0028474565089964265, spent $0.2960
+loop 1 cycle 2 (steps 4-7): best g1-01 0.008606347057213304, spent $0.1523
+loop 1 cycle 3 (steps 8-11): best g2-03 0.017934195786910023, spent $0.1408
+loop 1 cycle 4 (steps 12-15): best g2-03 0.03661809831965368, spent $0.1255
+stopped: stopped_by_user · selected g2-03 · runs/20261104-200512-07b8

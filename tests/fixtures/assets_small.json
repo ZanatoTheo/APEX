@@ -1,0 +1,11 @@
+{
+ "tradable": {
+  "SPY": "equity",
+  "TLT": "bond",
+  "BTC-USD": "crypto"
+ },
+ "context": {
+  "Oil": "DCOILWTICO",
+  "US 10y yield": "DGS10"
+ }
+}

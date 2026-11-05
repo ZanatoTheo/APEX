@@ -1,0 +1,22 @@
+{
+ "tradable": {
+  "SPY": "equity",
+  "QQQ": "equity",
+  "IWM": "equity",
+  "EFA": "equity",
+  "EEM": "equity",
+  "XLE": "equity",
+  "TLT": "bond",
+  "IEF": "bond",
+  "LQD": "bond",
+  "HYG": "bond",
+  "GLD": "gold",
+  "VNQ": "real_estate",
+  "BTC-USD": "crypto"
+ },
+ "context": {
+  "Oil": "DCOILWTICO",
+  "US 10y yield": "DGS10",
+  "Dollar index": "DTWEXBGS"
+ }
+}
