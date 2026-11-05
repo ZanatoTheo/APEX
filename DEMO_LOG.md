@@ -1,4 +1,4 @@
-# Apex 2: demo log (runs of 2026-11-04)
+# Apex: demo log (runs of 2026-11-04)
 
 Everything needed to script the video, with exact numbers, quotes and file paths. Source paths such as
 `hidden/eval/` are inside the run's folder, which isn't in this repo; only Run 5's cycle log is, in `runs/`.
@@ -6,7 +6,7 @@ Times are local (CET). Run 5 is the demo run; run 4 is the backup.
 
 ---
 
-## 1. What Apex 2 is (for the voice-over)
+## 1. What Apex is (for the voice-over)
 
 A generic agent-evolution engine (`apex/`) plus one test task behind a connector (`apex/env_connector/`). The core
 knows nothing about markets; the task here is: manage a portfolio of 13 disguised assets (stocks, bonds, gold,
@@ -193,7 +193,7 @@ agent's trades, cash share and fees; Eval in parallel.
    and the agent's reply (5.5).
 5. **The twist** (40 s): the winner never traded (6.1) and the reviewer praised it (6.2). The loop optimises what you
    measure; next fix is to measure trades, not just returns.
-6. **Close** (20 s): numbers: 4 generations, 22 agents, ~$0.71, 2 h, 0 failed calls.
+6. **Close** (20 s): numbers: 4 generations, 18 agents, ~$0.71, 2 h, 0 failed calls.
 
 ---
 

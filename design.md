@@ -1,5 +1,5 @@
 # Project Apex: Design Document
-- Status: built (Apex 2)
+- Status: built (Apex)
 - Version: 2.0.0
 - Date: 2026-11-05
 

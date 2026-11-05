@@ -89,7 +89,7 @@ held-out success rate reaches p_min on every named task distribution.
 
 ## Status
 
-The built system is Apex 2 (`design.md`). It keeps the idea of evolving agents by selection but differs from the MVP
+The built system is Apex (`design.md`). It keeps the idea of evolving agents by selection but differs from the MVP
 above: the core knows nothing about the task, and the task behind its connector is trading 13 renamed assets through
 2025 instead of Python bug-fixing. Agents are defined by axioms and the files they write, not by a Graph Config.
 

@@ -73,7 +73,7 @@ def years(settings: dict, holdout_flag=None) -> tuple:
 
 
 def main(argv=None) -> int:
-    p = argparse.ArgumentParser(description="Build the market chunks and run Apex 2 on them.")
+    p = argparse.ArgumentParser(description="Build the market chunks and run Apex on them.")
     p.add_argument("--csv", default=str(build_chunks.DATA / "prices.csv"))
     p.add_argument("--assets", default=str(build_chunks.ASSETS))
     p.add_argument("--time-gap", type=int, default=build_chunks.TIME_GAP)

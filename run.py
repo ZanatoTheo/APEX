@@ -1,4 +1,4 @@
-"""Apex 2 command line. Only argument handling lives here; the loop is apex/operation.py.
+"""Apex command line. Only argument handling lives here; the loop is apex/operation.py.
 
   run.py run --connector <module> [--data <file>] [--holdout <file>] [--seeds <dir>] [--config <file>]
              [--max-loops N] [--max-cycles N] [--orch_wonder | --orch_spark] [--fake] [--out runs]
@@ -166,7 +166,7 @@ def cmd_models(args) -> int:
 
 
 def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(prog="run.py", description="Apex 2: run, estimate, list models.")
+    parser = argparse.ArgumentParser(prog="run.py", description="Apex: run, estimate, list models.")
     sub = parser.add_subparsers(dest="command", required=True)
 
     run = sub.add_parser("run", help="run the operation")
